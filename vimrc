@@ -1,9 +1,9 @@
-"set shell=\"C:\Program\ Files\Git\bin\sh.exe\"
-set shell=cmd.exe
+if !has('unix')
+    "set shell=\"C:\Program\ Files\Git\bin\sh.exe\"
+    set shell=cmd.exe
+endif
 
 " Allow pathogen to be a git submodule
-"exe 'set rtp+=' . expand('C:/Users/nikos/vimfiles/bundle/vim-pathogen/autoload')
-
 runtime bundle/vim-pathogen/autoload/pathogen.vim"
 execute pathogen#infect()
 
@@ -40,13 +40,12 @@ colorscheme solarized
 if has('gui_running')
     set lines=70
     set columns=100
-    "colorscheme slate
-    "set guifont=Meslo\ LG\ S\ for\ Powerline
-    "set guifont=Inconsolata-g\ for\ Powerline
-    set guifont=Roboto\ Mono\ for\ Powerline
-    let g:airline_powerline_fonts = 1
+if has('unix')
+    set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline
 else
-    "colorscheme peachpuff
+    set guifont=Roboto\ Mono\ for\ Powerline
+endif
+    let g:airline_powerline_fonts = 1
 endif
 
 "# Plugin settings
