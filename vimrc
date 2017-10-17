@@ -36,6 +36,9 @@ set ruler
 set clipboard=unnamed
 syntax enable
 set background=dark
+" Must be defined as a colorscheme before other colorschemes are initialiesd
+" as colorschemes may clear user defined settings.
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
 colorscheme solarized
 if has('gui_running')
     set lines=70
@@ -47,6 +50,9 @@ else
 endif
     let g:airline_powerline_fonts = 1
 endif
+
+"highlight unwanted spaces
+autocmd Syntax * syn match ExtraWhiteSpace /\s\+$\| \+\ze\t/ containedin=ALL
 
 "# Plugin settings
 "let g:tagbar_ctags_bin='C:\Users\nikos\bin\ctags.exe'
