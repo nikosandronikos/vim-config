@@ -95,8 +95,10 @@ call NERDTreeHighlightFile('zip', 'gray', 'NONE', base01, 'NONE')
 call NERDTreeHighlightFile('cache', 'gray', 'NONE', base01, 'NONE')
 call NERDTreeHighlightFile('log', 'gray', 'NONE', base01, 'NONE')
 "let g:tagbar_ctags_bin='C:\Users\nikos\bin\ctags.exe'
-let NERDTreeIgnore = ['\.pyc$', '\.pyd$', '\.zip$', '\.png$']
-"## Close vim if NERDTree is the only window
+" Set the filter to only show source files
+
+" Now using vim-nerdtree-ignore so put these in .nerdtreeignore file in project dir
+"let NERDTreeIgnore = ['\.pyc$', '\.pyd$', '\.zip$', '\.png$', '\.xml$', '\.json$', '\.cache$']
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "## Open NERDTree automatically if directory given to vim
 autocmd StdinReadPre * let s:std_in=1
@@ -124,3 +126,7 @@ let g:ctrlp_cmd= 'CtrlP'
 noremap <space> i<space><esc>
 " Custom commands
 command Bd bp|bd #
+
+" Highlight some common typos
+autocmd Syntax * syn keyword Error attribites
+
