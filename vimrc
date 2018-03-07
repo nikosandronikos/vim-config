@@ -55,6 +55,45 @@ endif
 autocmd Syntax * syn match ExtraWhiteSpace /\s\+$\| \+\ze\t/ containedin=ALL
 
 "# Plugin settings
+let g:ackprg = 'ag --vimgrep'
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+ exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+ exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+let base03=  '#002b36'
+let base02=  '#073642'
+let base01=  '#586e75'
+let base00=  '#657b83'
+let base0=   '#839496'
+let base1=   '#93a1a1'
+let base2=   '#eee8d5'
+let base3=   '#fdf6e3'
+let yellow=  '#B58900'
+let orange=  '#CB4B16'
+let red=     '#DC322F'
+let magenta= '#D33682'
+let violet=  '#6C71C4'
+let blue=    '#268BD2'
+let cyan=    '#2AA198'
+let green=   '#859900'
+
+call NERDTreeHighlightFile('py', 'green', 'NONE', magenta, 'NONE')
+call NERDTreeHighlightFile('pyc', 'gray', 'NONE', base01, 'NONE')
+call NERDTreeHighlightFile('ini', 'yellow', 'NONE', orange, 'NONE')
+call NERDTreeHighlightFile('md', 'blue', 'NONE', blue, 'NONE')
+call NERDTreeHighlightFile('config', 'yellow', 'NONE', yellow, 'NONE')
+call NERDTreeHighlightFile('conf', 'yellow', 'NONE', cyan, 'NONE')
+call NERDTreeHighlightFile('json', 'yellow', 'NONE', violet, 'NONE')
+call NERDTreeHighlightFile('html', 'yellow', 'NONE', green, 'NONE')
+call NERDTreeHighlightFile('css', 'cyan', 'NONE', magenta, 'NONE')
+call NERDTreeHighlightFile('js', 'Red', 'NONE', red, 'NONE')
+call NERDTreeHighlightFile('xml', 'cyan', 'NONE', cyan, 'NONE')
+call NERDTreeHighlightFile('zip', 'gray', 'NONE', base01, 'NONE')
+call NERDTreeHighlightFile('cache', 'gray', 'NONE', base01, 'NONE')
+call NERDTreeHighlightFile('log', 'gray', 'NONE', base01, 'NONE')
 "let g:tagbar_ctags_bin='C:\Users\nikos\bin\ctags.exe'
 let NERDTreeIgnore = ['\.pyc$', '\.pyd$', '\.zip$', '\.png$']
 "## Close vim if NERDTree is the only window
