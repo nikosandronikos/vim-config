@@ -80,12 +80,12 @@ let blue=    '#268BD2'
 let cyan=    '#2AA198'
 let green=   '#859900'
 
-call NERDTreeHighlightFile('py', 'green', 'NONE', magenta, 'NONE')
+call NERDTreeHighlightFile('py', 'green', 'NONE', yellow, 'NONE')
 call NERDTreeHighlightFile('pyc', 'gray', 'NONE', base01, 'NONE')
 call NERDTreeHighlightFile('ini', 'yellow', 'NONE', orange, 'NONE')
 call NERDTreeHighlightFile('md', 'blue', 'NONE', blue, 'NONE')
 call NERDTreeHighlightFile('config', 'yellow', 'NONE', yellow, 'NONE')
-call NERDTreeHighlightFile('conf', 'yellow', 'NONE', cyan, 'NONE')
+call NERDTreeHighlightFile('conf', 'yellow', 'NONE', yellow, 'NONE')
 call NERDTreeHighlightFile('json', 'yellow', 'NONE', violet, 'NONE')
 call NERDTreeHighlightFile('html', 'yellow', 'NONE', green, 'NONE')
 call NERDTreeHighlightFile('css', 'cyan', 'NONE', magenta, 'NONE')
@@ -94,6 +94,8 @@ call NERDTreeHighlightFile('xml', 'cyan', 'NONE', cyan, 'NONE')
 call NERDTreeHighlightFile('zip', 'gray', 'NONE', base01, 'NONE')
 call NERDTreeHighlightFile('cache', 'gray', 'NONE', base01, 'NONE')
 call NERDTreeHighlightFile('log', 'gray', 'NONE', base01, 'NONE')
+
+hi Directory guifg='#2AA198' ctermfg=red
 "let g:tagbar_ctags_bin='C:\Users\nikos\bin\ctags.exe'
 " Set the filter to only show source files
 
