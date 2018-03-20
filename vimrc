@@ -112,6 +112,7 @@ set updatetime=2000
 let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 
 " File type options
+autocmd BufNewFile,BufReadPost *.mjs set filetype=javascript
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 au BufRead,BufNewFile *.bs set filetype=html
 
