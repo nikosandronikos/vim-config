@@ -96,6 +96,9 @@ call NERDTreeHighlightFile('cache', 'gray', 'NONE', base01, 'NONE')
 call NERDTreeHighlightFile('log', 'gray', 'NONE', base01, 'NONE')
 
 hi Directory guifg='#2AA198' ctermfg=red
+
+hi MatchParen guifg=orange guibg=NONE
+
 "let g:tagbar_ctags_bin='C:\Users\nikos\bin\ctags.exe'
 " Set the filter to only show source files
 
