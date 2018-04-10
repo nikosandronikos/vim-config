@@ -43,6 +43,7 @@ colorscheme solarized
 if has('gui_running')
     set lines=70
     set columns=100
+    set guioptions-=T
 if has('unix')
     set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline
 else

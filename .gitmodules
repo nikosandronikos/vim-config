@@ -34,3 +34,6 @@
 [submodule "bundle/vim-nerdtree-ignore"]
 	path = bundle/vim-nerdtree-ignore
 	url = https://github.com/dsimidzija/vim-nerdtree-ignore.git
+[submodule "bundle/tern_for_vim"]
+	path = bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
