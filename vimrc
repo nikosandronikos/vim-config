@@ -39,17 +39,17 @@ set background=dark
 " Must be defined as a colorscheme before other colorschemes are initialiesd
 " as colorschemes may clear user defined settings.
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
-colorscheme solarized
 if has('gui_running')
+    colorscheme solarized
     set lines=70
     set columns=100
     set guioptions-=T
+    let g:airline_powerline_fonts = 1
 if has('unix')
     set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline
 else
     set guifont=Roboto\ Mono\ for\ Powerline
 endif
-    let g:airline_powerline_fonts = 1
 endif
 
 "highlight unwanted spaces
