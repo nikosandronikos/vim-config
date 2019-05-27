@@ -7,6 +7,10 @@ endif
 runtime bundle/vim-pathogen/autoload/pathogen.vim"
 execute pathogen#infect()
 
+"# Required by vimwiki
+set nocompatible
+filetype plugin on
+
 "# Editor functional settings
 set backspace=indent,eol,start
 set expandtab
