@@ -11,6 +11,8 @@ execute pathogen#infect()
 set nocompatible
 filetype plugin on
 
+let g:vimwiki_list = [{ 'path':'C:\Users\NikosAndronikos\vimwiki\wiki', 'path_html': 'C:\Users\NikosAndronikos\vimwiki' }]
+
 "# Editor functional settings
 set backspace=indent,eol,start
 set expandtab
@@ -134,9 +136,33 @@ imap jj <ESC>
 nmap <F8> :TagbarToggle<CR>
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd= 'CtrlP'
-noremap <space> i<space><esc>
+noremap <Space> <Nop>
+let mapleader=' '
+nnoremap <leader>w :w<cr>   " save current buffer
+nnoremap <leader>k :Bd<cr>   " close current buffer
+
+
 " Custom commands
 command Bd bp|bd #
+
+"move to the split in the direction shown, or create a new split
+nnoremap <silent> <leader>h :call WinMove('h')<cr>
+nnoremap <silent> <leader>j :call WinMove('j')<cr>
+nnoremap <silent> <leader>k :call WinMove('k')<cr>
+nnoremap <silent> <leader>l :call WinMove('l')<cr>
+
+function! WinMove(key)
+  let t:curwin = winnr()
+  exec "wincmd ".a:key
+  if (t:curwin == winnr())
+    if (match(a:key,'[jk]'))
+      wincmd v
+    else
+      wincmd s
+    endif
+    exec "wincmd ".a:key
+  endif
+endfunction
 
 " Highlight some common typos
 autocmd Syntax * syn keyword Error attribites
