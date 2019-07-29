@@ -36,6 +36,7 @@ set hlsearch
 set cc=80
 hi ColorColumn ctermbg=black guibg=#222222
 set laststatus=2
+set cursorline
 set showmatch
 set vb
 set ruler
@@ -86,6 +87,9 @@ let violet=  '#6C71C4'
 let blue=    '#268BD2'
 let cyan=    '#2AA198'
 let green=   '#859900'
+
+highlight Cursor guibg=magenta
+highlight CursorLineNr guifg=magenta
 
 call NERDTreeHighlightFile('py', 'green', 'NONE', yellow, 'NONE')
 call NERDTreeHighlightFile('pyc', 'gray', 'NONE', base01, 'NONE')
