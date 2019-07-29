@@ -145,15 +145,11 @@ let mapleader=' '
 nnoremap <leader>w :w<cr>   " save current buffer
 nnoremap <leader>k :Bd<cr>   " close current buffer
 
+noremap <leader>h :MBEbp<cr>
+noremap <leader>l :MBEbf<cr>
 
 " Custom commands
 command Bd bp|bd #
-
-"move to the split in the direction shown, or create a new split
-nnoremap <silent> <leader>h :call WinMove('h')<cr>
-nnoremap <silent> <leader>j :call WinMove('j')<cr>
-nnoremap <silent> <leader>k :call WinMove('k')<cr>
-nnoremap <silent> <leader>l :call WinMove('l')<cr>
 
 function! WinMove(key)
   let t:curwin = winnr()
