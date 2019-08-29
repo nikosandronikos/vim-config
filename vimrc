@@ -19,6 +19,9 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 set encoding=utf-8
+
+set fileformat=unix
+
 "## Auto indent
 set ai
 "## sets working directory to current file location
@@ -61,9 +64,6 @@ endif
 
 "highlight unwanted spaces
 autocmd Syntax * syn match ExtraWhiteSpace /\s\+$\| \+\ze\t/ containedin=ALL
-
-"# Plugin settings
-let g:ackprg = 'ag --vimgrep'
 
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -167,3 +167,24 @@ endfunction
 " Highlight some common typos
 autocmd Syntax * syn keyword Error attribites
 
+" https://thoughtbot.com/blog/faster-grepping-in-vim
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_use_caching = 0
+endif
+
+" Search for word under cursor - from above link
+nnoremap K :grep! <C-R><C-W><CR>:cw<CR><CR>
+
+" Set up ack.vim to use ag instead of grep
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
+" Set NERDTree to set working directory on load
+" This is required for ack.vim as it searches in the cwd, also required
+" for NERDTree git icons to work
+let g:NERDTreeChDirMode=1
