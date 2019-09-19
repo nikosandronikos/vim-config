@@ -123,7 +123,7 @@ map <silent> <F3> :call BufferList()<CR>a
 
 "# Tagbar
 set updatetime=2000
-let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
+"let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 
 " File type options
 autocmd BufNewFile,BufReadPost *.mjs set filetype=javascript
