@@ -188,3 +188,7 @@ cnoreabbrev AG Ack
 " This is required for ack.vim as it searches in the cwd, also required
 " for NERDTree git icons to work
 let g:NERDTreeChDirMode=1
+
+" yaml config
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
