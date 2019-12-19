@@ -174,6 +174,8 @@ if executable('ag')
     let g:ctrlp_use_caching = 0
 endif
 
+let g:ctrlp_working_path_mode='r'
+
 " Search for word under cursor - from above link
 nnoremap K :grep! <C-R><C-W><CR>:cw<CR><CR>
 
