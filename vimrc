@@ -56,7 +56,7 @@ if has('gui_running')
     set guioptions-=T
     let g:airline_powerline_fonts = 1
 if has('unix')
-    set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline
+    set guifont="Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline"
 else
     set guifont=Roboto\ Mono\ for\ Powerline
 endif
